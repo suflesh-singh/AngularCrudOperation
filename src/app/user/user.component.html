@@ -1,0 +1,36 @@
+<div class="container mx-auto">
+    <button class="p-2 border border-red-300 float-right mb-2 bg-green-300 px-6 rounded-lg font-bold" routerLink="add-user">Add User</button>
+    <div class="">
+        <table class="border-collapse  border-slate-400 bg-white w-full">
+              <thead class="bg-slate-300 ">
+                <tr >
+                    <th class="p-4">ID</th>
+                    <th class="p-4">NAME</th>
+                    <th class="p-4">USERNAME</th>
+                    <th class="p-4">EMAIL</th>
+                    <th class="p-4">ADDRESS</th>
+                    <th class="p-4">ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of mydata" class="text-center">
+                    <td class="border p-4">{{user.id}}</td>
+                    <td class="border p-4">{{user.name}}</td>
+                    <td class="border p-4">{{user.username}}</td>
+                    <td class="border p-4">{{user.email}}</td>
+                    <td class="border p-4">{{user.address}}</td>
+                    <!-- <td class="border p-4">
+                        <select name="" id="" class="w-full h-8 outline-none">
+                            <option value=""></option>
+                        </select>
+                    </td> -->
+                    <td>
+                            <button class="bg-blue-300 p-2 px-4 rounded-lg mx-2" routerLink="/add-user/{{user.id}}">Edit</button>
+                            <button class="bg-red-300 p-2 px-4 rounded-lg" (click)="delete(user.id)">Delete</button>
+                    </td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+ </div>
+
